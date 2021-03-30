@@ -22,6 +22,13 @@ async function handleRequest(event: FetchEvent) {
         let body = await event.request.json()
         return await handleInteract(body, event.request)
     }
+    else if (url.pathname == '/install') {
+        if (event.request.method != 'GET') {
+            return new Response('Invalid method', {status: 400})
+        }
+        // make sure this isn't a public bot if you want to restrict installs
+        return new Response(null, {headers: {location: `https://discord.com/oauth2/authorize?client_id=${CLIENT_ID}&scope=applications.commands`}})
+    }
     return new Response('Not implemented', {status: 501})
 }
 

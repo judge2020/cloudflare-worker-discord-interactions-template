@@ -29,6 +29,8 @@ wrangler secret put CLIENT_SECRET
 wrangler secret put CLIENT_ID
 ```
 
+In production, it is recommended to set up `CONFIG_KV_NAMESPACE` so that it caches the client credential grant token that is used for command management API calls. To do so, run `wrangler kv:namespace create CONFIG_KV_NAMESPACE` and copy the text it provides to your wrangler.toml. 
+
 These will be exposed to the application as global variable strings for development and are all required.
 
 After setting up your application and deploying (see below), point the 'interactions url' in the discord app settings to `{your endpoint}/interactions`, eg `https://test-discord.my-username.workers.dev/interactions`).
