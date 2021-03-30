@@ -2,6 +2,8 @@
 
 An early-stage Discord Interactions template for Cloudflare Workers via Wrangler. Running completely serverless via Cloudflare provides many benefits and makes running a slash command bot basically zero-maintenance.
 
+While this is a good starting point for slash commands, it is not meant to be a 'framework' - it only goes as far as providing examples and some [helper functions](./src/helpers.ts). You most certainly will need to refer to the [official Discord API docs](https://discord.com/developers/docs/interactions/slash-commands) to properly utilize slash commands.
+
 ## 🔋 Getting Started
 
 This template is meant to be used with [Wrangler](https://github.com/cloudflare/wrangler). If you are not already familiar with the tool, we recommend that you install the tool and configure it to work with your [Cloudflare account](https://dash.cloudflare.com). Documentation can be found [here](https://developers.cloudflare.com/workers/tooling/wrangler/).

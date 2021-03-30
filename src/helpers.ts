@@ -1,5 +1,15 @@
 const token_kv_key = "CLIENT_CRED_TOKEN";
 
+/**
+ * Assuming env vars are set up correctly, returns a valid client credential.
+ * You would use this via `fetch` like so:
+ * ```js
+ * fetch('discord.com/api/something`, {
+ *     headers: {'Authorization': `Bearer ${(await getClientCredentialToken())}`}
+ * }}
+ * @returns {string} - The auth token itself
+ * ```
+ */
 export async function getClientCredentialToken() {
     if (typeof CONFIG_KV_NAMESPACE !== 'undefined') {
         let token = await CONFIG_KV_NAMESPACE.get(token_kv_key, 'text');
