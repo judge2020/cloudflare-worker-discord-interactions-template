@@ -28,7 +28,7 @@ async function handleRequest(event: FetchEvent) {
             return new Response('Invalid method', {status: 400})
         }
         // make sure this isn't a public bot if you want to restrict installs
-        return new Response(null, {headers: {location: `https://discord.com/oauth2/authorize?client_id=${CLIENT_ID}&scope=applications.commands`}})
+        return new Response(null, {headers: {location: `https://discord.com/oauth2/authorize?client_id=${CLIENT_ID}&scope=applications.commands`}, status: 302})
     }
     else if (url.pathname == '/main_install') {
         // not entirely sure about if this needs to be rate limited or behind auth in some fashion; just need an example.
